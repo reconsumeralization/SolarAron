@@ -1,0 +1,29 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Aquatherm",
+    "Bayside",
+    "beachside",
+    "Brevard",
+    "Gifford",
+    "Indialantic",
+    "insulative",
+    "linecap",
+    "linejoin",
+    "Mims",
+    "nextjs",
+    "Poppe",
+    "Rockledge",
+    "Scottsmoor",
+    "Suntree",
+    "Valkaria",
+    "Vero",
+    "Viera",
+    "Wickham"
+  ],
+  "flagWords": [],
+  "ignorePaths": [
+    "node_modules/**"
+  ]
+} 
