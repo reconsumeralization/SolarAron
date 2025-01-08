@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sun, Home, Package, Phone, Menu, X, Users, Wrench, BookOpen } from 'lucide-react';
+import { Sun, Home, Phone, Menu, X, Wrench, DollarSign } from 'lucide-react';
 
 const navItems = [
   { path: '/', label: 'Home', icon: Home },
   { path: '/services', label: 'Services', icon: Wrench },
-  { path: '/packages', label: 'Packages', icon: Package },
-  { path: '/stories', label: 'Success Stories', icon: Users },
-  { path: '/blog', label: 'Blog', icon: BookOpen },
+  { path: '/pricing', label: 'Pricing', icon: DollarSign },
   { path: '/contact', label: 'Contact', icon: Phone }
 ];
 
