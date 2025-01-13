@@ -47,27 +47,6 @@ export default function PromoBanner() {
           <p className="text-yellow-400/90 text-sm">*Valid for existing Florida Solar East customers only</p>
         </motion.div>
       </motion.div>
-
-      {/* Animated wave divider */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="absolute bottom-0 left-0 w-full"
-      >
-        <svg
-          viewBox="0 0 1440 120"
-          className="w-full h-auto fill-background dark:fill-background transform rotate-180"
-          preserveAspectRatio="none"
-        >
-          <motion.path
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            d="M0,32L48,37.3C96,43,192,53,288,58.7C384,64,480,64,576,58.7C672,53,768,43,864,48C960,53,1056,75,1152,80C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          />
-        </svg>
-      </motion.div>
     </section>
   );
 }
