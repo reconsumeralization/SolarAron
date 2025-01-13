@@ -15,10 +15,10 @@ export default function PromoBanner() {
         className="container mx-auto px-4 text-center relative z-10"
       >
         <motion.span
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
-          className="inline-block bg-yellow-500/20 text-yellow-400 font-semibold px-4 py-1 rounded-full mb-6"
+          transition={{ duration: 0.8 }}
+          className="inline-block px-4 py-1 mb-4 text-sm font-medium text-yellow-400 bg-yellow-400/10 rounded-full"
         >
           Exclusive Offer
         </motion.span>
@@ -26,30 +26,26 @@ export default function PromoBanner() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-4xl md:text-5xl font-bold text-white mb-6"
         >
           10% Off All Solar <br />
           Maintenance Packages
         </motion.h2>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="text-2xl text-blue-100/90 mb-8 max-w-3xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-lg md:text-xl text-blue-100 mb-8 space-y-2"
         >
-          For Florida Solar East <ArrowRight className="inline-block w-6 h-6 text-yellow-400 mx-2" /> A-Aaron's Florida Solar LLC
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-yellow-400/90"
-        >
-          *Valid for existing Florida Solar East customers only
-        </motion.p>
+          <p className="flex items-center justify-center gap-2">
+            For Florida Solar East
+            <ArrowRight className="w-5 h-5 text-yellow-400" />
+            A-Aaron's Florida Solar LLC
+          </p>
+          <p className="text-yellow-400/90 text-sm">*Valid for existing Florida Solar East customers only</p>
+        </motion.div>
       </motion.div>
 
       {/* Animated wave divider */}
