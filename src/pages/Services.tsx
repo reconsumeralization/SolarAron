@@ -1,197 +1,218 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  Clock,
+  Star,
+  Wrench,
+} from 'lucide-react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { Sun, Shield, Wrench, Droplets, ThermometerSun } from 'lucide-react';
 
-interface ServiceDetail {
-  title: string;
-  icon: React.ElementType;
-  description: string;
-  process: string[];
-  benefits: string[];
-}
+import {
+  AnimatedHero,
+  AnimatedStats,
+} from '@/components';
 
-const ServicePage: React.FC = () => {
-  const services: ServiceDetail[] = [
-    {
-      title: "PV Panel Cleaning",
-      icon: Droplets,
-      description: "Our specialized cleaning process ensures maximum efficiency while protecting your investment. We use only the highest quality materials and techniques to maintain your panels.",
-      process: [
-        "Initial inspection for any damage or issues",
-        "Gentle cleaning with deionized water and proprietary solution",
-        "Manual squeegee application with special attention to stubborn areas",
-        "Final polish with professional-grade microfiber cloth",
-        "Post-cleaning inspection and performance check"
-      ],
-      benefits: [
-        "Increased energy production",
-        "Extended panel lifespan",
-        "Prevention of hot spots and damage",
-        "Improved system efficiency"
-      ]
-    },
-    {
-      title: "Solar System Tune-Up",
-      icon: Wrench,
-      description: "A comprehensive maintenance package that covers all aspects of your solar system, ensuring optimal performance and longevity.",
-      process: [
-        "Detailed inspection of all roof penetrations and seals",
-        "Check and reseal mounting points as needed",
-        "Thorough testing of all electrical connections",
-        "Complete rack mounting system inspection",
-        "Performance analysis and optimization",
-        "Cleaning of selected panels",
-        "Advanced inspection of critical components"
-      ],
-      benefits: [
-        "Comprehensive system health check",
-        "Prevention of potential issues",
-        "Optimal system performance",
-        "Extended system lifespan"
-      ]
-    },
-    {
-      title: "Advanced System Inspection",
-      icon: Shield,
-      description: "In-depth diagnostic testing and analysis to identify and prevent potential issues before they become problems.",
-      process: [
-        "Complete IV curve analysis for performance testing",
-        "Thermal imaging to detect hot spots and potential issues",
-        "Detailed inverter diagnostic check",
-        "Comprehensive shading analysis",
-        "System efficiency evaluation",
-        "Detailed problem-solving consultation",
-        "Performance optimization recommendations"
-      ],
-      benefits: [
-        "Early problem detection",
-        "Maximized system efficiency",
-        "Professional documentation",
-        "Expert recommendations"
-      ]
-    },
-    {
-      title: "Bird/Debris Prevention",
-      icon: Shield,
-      description: "Professional installation of protective measures to prevent wildlife interference and debris accumulation.",
-      process: [
-        "Site assessment and measurement",
-        "Custom wire mesh cutting and preparation",
-        "Professional installation around panel perimeter",
-        "Secure mounting with specialized hardware",
-        "Final inspection and adjustment"
-      ],
-      benefits: [
-        "Prevention of nest building",
-        "Protection from debris accumulation",
-        "Maintained system aesthetics",
-        "Reduced maintenance needs"
-      ]
-    },
-    {
-      title: "Pool Solar Maintenance",
-      icon: Sun,
-      description: "Comprehensive maintenance service for your pool solar system to ensure efficient heating and operation.",
-      process: [
-        "Complete system pressure testing",
-        "Thorough flush of all panels and pipes",
-        "Detailed inspection of all fasteners and connections",
-        "Leak detection and repair",
-        "Flow rate testing and optimization",
-        "System efficiency analysis"
-      ],
-      benefits: [
-        "Optimal heating efficiency",
-        "Prevention of leaks",
-        "Extended system life",
-        "Reduced operating costs"
-      ]
-    },
-    {
-      title: "Hot Water System Service",
-      icon: ThermometerSun,
-      description: "Detailed maintenance and inspection of your solar hot water system to ensure reliable performance.",
-      process: [
-        "Tank inspection and flush",
-        "Panel cleaning and inspection",
-        "Complete voltage testing from panels",
-        "DC pipe inspection and insulation check",
-        "System pressure testing",
-        "Temperature sensor verification",
-        "Controller programming check"
-      ],
-      benefits: [
-        "Consistent hot water supply",
-        "Improved system efficiency",
-        "Extended equipment life",
-        "Lower operating costs"
-      ]
+import { services } from '../data/services';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
     }
-  ];
-
-  return (
-    <div className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-4">Our Services</h1>
-        <p className="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-          Professional solar maintenance solutions with attention to every detail
-        </p>
-
-        <div className="space-y-12">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-8">
-                <div className="flex items-center mb-6">
-                  <div className="bg-blue-100 p-3 rounded-full mr-4">
-                    <Icon className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold text-blue-900">{service.title}</h2>
-                </div>
-
-                <p className="text-gray-600 mb-6">{service.description}</p>
-
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-lg font-semibold text-blue-900 mb-4">Our Process:</h3>
-                    <ul className="space-y-3">
-                      {service.process.map((step, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="text-blue-500 mr-2">•</span>
-                          <span className="text-gray-600">{step}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-blue-900 mb-4">Benefits:</h3>
-                    <ul className="space-y-3">
-                      {service.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="text-green-500 mr-2">✓</span>
-                          <span className="text-gray-600">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            to="/pricing"
-            className="inline-block bg-blue-900 text-white font-bold py-4 px-8 rounded-full hover:bg-blue-800 transition-colors"
-          >
-            View Pricing
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
+  }
 };
 
-export default ServicePage; 
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
+
+export default function ServicePage() {
+  return (
+    <>
+      <Helmet>
+        <title>Solar Maintenance Services | A-Aaron's Florida Solar</title>
+        <meta name="description" content="Professional solar maintenance solutions to maximize your investment and ensure long-term performance. Expert services for all types of solar systems." />
+      </Helmet>
+
+      <div className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <AnimatedHero
+          title="Solar Maintenance Services"
+          subtitle="Professional solutions to maximize your solar investment and ensure peak performance"
+        />
+
+        {/* Featured Services Grid */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold text-foreground mb-4">
+                Our Services
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Choose from our range of specialized solar maintenance services
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid md:grid-cols-3 gap-8"
+            >
+              {services.map((service) => (
+                <motion.div
+                  key={service.id}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-card rounded-xl shadow-lg overflow-hidden border border-border hover:border-primary/50 transition-colors duration-200"
+                >
+                  <img
+                    src={service.image}
+                    alt={service.name}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{service.name}</h3>
+                    <p className="text-muted-foreground mb-4">{service.description}</p>
+                    {service.price && (
+                      <p className="text-lg font-semibold text-primary mb-4">
+                        ${service.price} {service.priceUnit}
+                      </p>
+                    )}
+                    <Link
+                      to={`/services/${service.id}`}
+                      className="inline-flex items-center text-primary hover:text-primary/90"
+                    >
+                      View Details
+                      <span className="ml-2">→</span>
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <AnimatedStats
+          title="Our Service Impact"
+          description="The numbers that drive our commitment to excellence"
+          stats={[
+            {
+              value: 98,
+              label: "Customer Satisfaction",
+              suffix: "%"
+            },
+            {
+              value: 35,
+              label: "Average Efficiency Increase",
+              suffix: "%"
+            },
+            {
+              value: 1000,
+              label: "Systems Maintained",
+              suffix: "+"
+            }
+          ]}
+          variant="light"
+        />
+
+        {/* Service Benefits Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Service Benefits</h2>
+              <p className="text-muted-foreground">Why choose our professional service</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg border border-border hover:border-primary/20 transition-colors duration-200"
+              >
+                <div className="text-4xl font-bold text-primary dark:text-primary mb-2">35%</div>
+                <div className="text-gray-800 dark:text-gray-100 font-medium">Average Efficiency Gain</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg border border-border hover:border-primary/20 transition-colors duration-200"
+              >
+                <div className="text-4xl font-bold text-primary dark:text-primary mb-2">98%</div>
+                <div className="text-gray-800 dark:text-gray-100 font-medium">Customer Satisfaction</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg border border-border hover:border-primary/20 transition-colors duration-200"
+              >
+                <div className="text-4xl font-bold text-primary dark:text-primary mb-2">1yr</div>
+                <div className="text-gray-800 dark:text-gray-100 font-medium">Year Warranty</div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Overview Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-foreground mb-12">Service Overview</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white/50 dark:bg-gray-900/90 p-8 rounded-lg border border-border/50 hover:border-primary/20 transition-colors duration-200"
+              >
+                <div className="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <Clock className="w-6 h-6 text-primary" />
+                </div>
+                <p className="text-center text-muted-foreground dark:text-gray-300">Fast and efficient maintenance process</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white/50 dark:bg-gray-900/90 p-8 rounded-lg border border-border/50 hover:border-primary/20 transition-colors duration-200"
+              >
+                <div className="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <Wrench className="w-6 h-6 text-primary" />
+                </div>
+                <p className="text-center text-muted-foreground dark:text-gray-300">Skilled professionals with years of experience</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white/50 dark:bg-gray-900/90 p-8 rounded-lg border border-border/50 hover:border-primary/20 transition-colors duration-200"
+              >
+                <div className="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <Star className="w-6 h-6 text-primary" />
+                </div>
+                <p className="text-center text-muted-foreground dark:text-gray-300">Guaranteed satisfaction with our service</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+}

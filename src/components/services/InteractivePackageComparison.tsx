@@ -1,7 +1,17 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check, AlertTriangle, Zap, Calendar, DollarSign, Clock } from 'lucide-react';
-import { monthlyPackages } from '../../data/packages';
+import { useState } from 'react';
+
+import {
+  AnimatePresence,
+  motion,
+} from 'framer-motion';
+import {
+  AlertTriangle,
+  Check,
+  Clock,
+  Zap,
+} from 'lucide-react';
+
+import { packages } from '../../data/packages';
 
 export default function InteractivePackageComparison() {
   const [selectedFeature, setSelectedFeature] = useState<string | null>(null);
@@ -30,35 +40,33 @@ export default function InteractivePackageComparison() {
   return (
     <div className="bg-white rounded-xl shadow-lg p-6">
       <h2 className="text-2xl font-bold text-blue-900 mb-6">Compare Package Features</h2>
-      
+
       <div className="grid md:grid-cols-3 gap-6">
-        {monthlyPackages.map((pkg) => (
+        {packages.map((pkg) => (
           <motion.div
-            key={pkg.title}
+            key={pkg.id}
             whileHover={{ scale: 1.02 }}
             className="border rounded-lg p-4"
           >
-            <h3 className="text-xl font-bold text-blue-800 mb-2">{pkg.title}</h3>
-            <p className="text-2xl font-bold text-blue-600 mb-4">{pkg.price}</p>
-            
+            <h3 className="text-xl font-bold text-blue-800 mb-2">{pkg.name}</h3>
+            <p className="text-2xl font-bold text-blue-600 mb-4">${pkg.price}</p>
+
             <div className="space-y-3">
-              {commonFeatures.map((feature) => {
-                const Icon = feature.icon;
-                const included = pkg.features.find(f => 
-                  f.feature.toLowerCase().includes(feature.id)
-                )?.included;
+              {pkg.features.map((feature, index) => {
+                const commonFeature = commonFeatures.find(f =>
+                  feature.toLowerCase().includes(f.id.toLowerCase())
+                );
+                const Icon = commonFeature?.icon || Check;
 
                 return (
                   <motion.div
-                    key={feature.id}
+                    key={index}
                     className="flex items-start gap-2 cursor-pointer"
-                    onMouseEnter={() => setSelectedFeature(feature.id)}
+                    onMouseEnter={() => commonFeature && setSelectedFeature(commonFeature.id)}
                     onMouseLeave={() => setSelectedFeature(null)}
                   >
-                    <Icon className={`w-5 h-5 ${included ? 'text-green-500' : 'text-gray-400'}`} />
-                    <span className={included ? 'text-gray-800' : 'text-gray-400'}>
-                      {feature.title}
-                    </span>
+                    <Icon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-800">{feature}</span>
                   </motion.div>
                 );
               })}

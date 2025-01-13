@@ -12,6 +12,22 @@ export interface FormData {
   email: string;
   phone: string;
   address: string;
-  selectedPackage?: string;
   message: string;
+  selectedPackage?: string;
+}
+
+export interface ServiceDetails {
+  id: string;
+  name: string;
+  price?: number;
+  priceUnit?: string;
+  description: string;
+  features: string[];
+  benefits: string[];
+  image: string;
+  priceOptions?: {
+    size: string;
+    price: number;
+    laborCost: number;
+  }[];
 }

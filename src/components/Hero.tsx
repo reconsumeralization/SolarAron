@@ -1,33 +1,44 @@
-import React from 'react';
-import { Sun } from 'lucide-react';
+'use client'
+
+import { motion } from 'framer-motion'
+import { theme } from '@/lib/theme'
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute transform -rotate-45 -left-1/4 -top-1/4">
-          <Sun className="w-96 h-96 text-yellow-500/20" />
-        </div>
-        <div className="absolute transform rotate-45 -right-1/4 -bottom-1/4">
-          <Sun className="w-96 h-96 text-yellow-500/20" />
-        </div>
-      </div>
-      
-      <div className="relative z-10 text-center px-4">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-          10% Off All Solar
-          <span className="block text-yellow-400">Maintenance Packages</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-200 mb-8">
-          Keep your solar investment running at peak efficiency
-        </p>
-        <a
-          href="/packages"
-          className="inline-block bg-yellow-500 text-blue-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-400 transition-colors duration-300"
+    <div className="relative bg-gradient-to-b from-blue-900 to-blue-800 text-white py-32">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-3xl mx-auto"
         >
-          View Packages
-        </a>
+          <h1 className="text-5xl font-bold mb-6">
+            Expert Solar Maintenance & Repair
+          </h1>
+          <p className="text-xl mb-8">
+            Keep your solar investment performing at its peak with A A-ron's's professional maintenance services
+          </p>
+          <div className="flex justify-center gap-4">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={`tel:${theme.values.phone}`}
+              className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-yellow-300 transition-colors"
+            >
+              Call Now
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/contact"
+              className="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-900 transition-colors"
+            >
+              Learn More
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
     </div>
-  );
-}
+  )
+} 

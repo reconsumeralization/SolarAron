@@ -1,0 +1,14 @@
+export { default as Contact } from './Contact';
+export { default as CustomerStories } from './CustomerStories';
+export { default as Home } from './Home';
+export { default as Packages } from './Packages';
+export { default as Privacy } from './Privacy';
+export { default as ROICalculator } from './ROICalculator';
+export { default as ServiceDetail } from './ServiceDetail';
+export { default as ServiceDetails } from './ServiceDetails';
+export { default as ServicePage } from './Services';
+export { default as SystemHealth } from './SystemHealth';
+export { default as TestComponents } from './test-components';
+export { default as ThankYou } from './ThankYou';
+export { default as TransferPromo } from './TransferPromo';
+export { default as CityPage } from './CityPage';

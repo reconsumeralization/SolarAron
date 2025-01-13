@@ -5,4 +5,10 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200 
+  status = 200
+
+# Add form handling success redirect
+[[redirects]]
+  from = "/success"
+  to = "/thank-you"
+  status = 301

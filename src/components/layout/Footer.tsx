@@ -1,51 +1,52 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Footer: React.FC = () => {
+import { theme } from '@/lib/theme';
+
+export default function Footer() {
   return (
-    <footer className="bg-blue-900 text-white py-12">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-blue-100/80 dark:bg-blue-900/30 text-foreground">
+      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 py-12">
         <div>
-          <h2 className="text-xl font-bold mb-4">A-Aaron's Florida Solar</h2>
-          <p className="text-blue-100">
+          <h2 className="text-xl font-bold mb-4 text-foreground">{theme.values.companyName}</h2>
+          <p className="text-muted-foreground">
             Professional solar maintenance and repair services across Florida
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-4">Contact</h3>
-          <ul className="space-y-2">
-            <li>(321) 506-2981</li>
-            <li>Email Us</li>
-            <li>Brevard County, FL</li>
+          <h3 className="text-lg font-semibold mb-4 text-foreground">Contact</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>{theme.values.phone}</li>
+            <li>{theme.values.email}</li>
+            <li>{theme.values.address}</li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+          <h3 className="text-lg font-semibold mb-4 text-foreground">Quick Links</h3>
           <ul className="space-y-2">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/packages">Packages</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/privacy">Privacy Policy</Link></li>
+            <li><Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</Link></li>
+            <li><Link to="/packages" className="text-muted-foreground hover:text-foreground transition-colors">Packages</Link></li>
+            <li><Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
+            <li><Link to="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link></li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
-          <p className="text-blue-100">
-            Serving Brevard County
-          </p>
+          <h3 className="text-lg font-semibold mb-4 text-foreground">Service Areas</h3>
+          <ul className="text-muted-foreground">
+            {theme.values.serviceAreas.map((area) => (
+              <li key={area}>{area}</li>
+            ))}
+          </ul>
         </div>
       </div>
 
-      <div className="border-t border-blue-800 mt-8 pt-8">
-        <div className="container mx-auto px-4 text-center text-blue-200">
-          © 2025 Home Improvement LLC. All rights reserved.
+      <div className="border-t border-border">
+        <div className="container mx-auto px-4 text-center text-muted-foreground py-4">
+          © {new Date().getFullYear()} {theme.values.companyName}. All rights reserved.
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

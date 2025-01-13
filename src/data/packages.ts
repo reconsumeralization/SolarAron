@@ -1,41 +1,47 @@
-export const monthlyPackages = [
+import type { MaintenancePackage } from '../types';
+
+export const packages: MaintenancePackage[] = [
   {
-    title: "Basic Monthly",
-    price: "$49/month",
+    id: 'basic',
+    name: 'Basic Care',
+    price: 299,
     features: [
-      { feature: "Monthly panel inspection", included: true },
-      { feature: "Basic cleaning", included: true },
-      { feature: "Performance monitoring", included: true },
-      { feature: "Email support", included: true },
-      { feature: "Emergency service", included: false },
-      { feature: "Extended warranty", included: false }
+      'Annual inspection',
+      'Panel cleaning',
+      'Performance check',
+      'Basic monitoring',
+      '10% off repairs'
     ],
-    isPopular: false
+    savings: 450
   },
   {
-    title: "Premium Monthly",
-    price: "$89/month",
+    id: 'premium',
+    name: 'Premium Care',
+    price: 499,
     features: [
-      { feature: "Monthly panel inspection", included: true },
-      { feature: "Deep cleaning", included: true },
-      { feature: "24/7 Performance monitoring", included: true },
-      { feature: "Priority support", included: true },
-      { feature: "Emergency service", included: true },
-      { feature: "Extended warranty", included: true }
+      'Bi-annual inspection',
+      'Priority panel cleaning',
+      'Advanced diagnostics',
+      '24/7 monitoring',
+      '20% off repairs',
+      'Emergency support'
     ],
-    isPopular: true
+    recommended: true,
+    savings: 800
   },
   {
-    title: "Business Monthly",
-    price: "$199/month",
+    id: 'ultimate',
+    name: 'Ultimate Care',
+    price: 799,
     features: [
-      { feature: "Bi-weekly panel inspection", included: true },
-      { feature: "Premium cleaning", included: true },
-      { feature: "Real-time monitoring", included: true },
-      { feature: "24/7 Priority support", included: true },
-      { feature: "Same-day emergency service", included: true },
-      { feature: "Extended warranty + Insurance", included: true }
+      'Quarterly inspection',
+      'Premium panel cleaning',
+      'Comprehensive diagnostics',
+      'Real-time monitoring',
+      '30% off repairs',
+      'Priority emergency support',
+      'Extended warranty coverage'
     ],
-    isPopular: false
+    savings: 1200
   }
 ];
