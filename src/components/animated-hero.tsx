@@ -6,6 +6,7 @@ import {
   Sun,
   Zap,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import { theme } from '@/lib/theme';
 
@@ -140,22 +141,28 @@ export function AnimatedHero({ title, subtitle }: AnimatedHeroProps) {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <motion.a
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/contact"
-              className="px-8 py-4 rounded-full text-xl font-bold bg-white text-blue-900 hover:bg-blue-50 transition-colors"
             >
-              Get Started
-            </motion.a>
-            <motion.a
+              <Link
+                to="/contact"
+                className="inline-block px-8 py-4 rounded-full text-xl font-bold bg-white text-blue-900 hover:bg-blue-50 transition-colors"
+              >
+                Get Started
+              </Link>
+            </motion.div>
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/services"
-              className="px-8 py-4 rounded-full text-xl font-bold border-2 border-white hover:bg-white/10 transition-colors"
             >
-              Our Services
-            </motion.a>
+              <Link
+                to="/services"
+                className="inline-block px-8 py-4 rounded-full text-xl font-bold border-2 border-white hover:bg-white/10 transition-colors"
+              >
+                Our Services
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>

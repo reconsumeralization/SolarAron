@@ -1,5 +1,6 @@
 'use client'
 
+import { Link } from 'react-router-dom';
 import {
   Clock,
   Mail,
@@ -44,34 +45,34 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Service Areas</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/locations/rockledge" className="hover:text-blue-400 transition-colors">
+                <Link to="/locations/rockledge" className="hover:text-blue-400 transition-colors">
                   Rockledge (Headquarters)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/locations/melbourne" className="hover:text-blue-400 transition-colors">
+                <Link to="/locations/melbourne" className="hover:text-blue-400 transition-colors">
                   Melbourne
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/locations/vero-beach" className="hover:text-blue-400 transition-colors">
+                <Link to="/locations/vero-beach" className="hover:text-blue-400 transition-colors">
                   Vero Beach
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/locations/merritt-island" className="hover:text-blue-400 transition-colors">
+                <Link to="/locations/merritt-island" className="hover:text-blue-400 transition-colors">
                   Merritt Island
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/locations/titusville" className="hover:text-blue-400 transition-colors">
+                <Link to="/locations/titusville" className="hover:text-blue-400 transition-colors">
                   Titusville
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/locations/palm-bay" className="hover:text-blue-400 transition-colors">
+                <Link to="/locations/palm-bay" className="hover:text-blue-400 transition-colors">
                   Palm Bay
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -81,34 +82,34 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/services/system-inspection" className="hover:text-blue-400 transition-colors">
+                <Link to="/services/system-inspection" className="hover:text-blue-400 transition-colors">
                   Advanced System Inspection
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/bird-prevention" className="hover:text-blue-400 transition-colors">
+                <Link to="/services/bird-prevention" className="hover:text-blue-400 transition-colors">
                   Bird/Debris Prevention
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/pool-solar" className="hover:text-blue-400 transition-colors">
+                <Link to="/services/pool-solar" className="hover:text-blue-400 transition-colors">
                   Pool Solar Maintenance
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/hot-water" className="hover:text-blue-400 transition-colors">
+                <Link to="/services/hot-water" className="hover:text-blue-400 transition-colors">
                   Hot Water System Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/panel-installation" className="hover:text-blue-400 transition-colors">
+                <Link to="/services/panel-installation" className="hover:text-blue-400 transition-colors">
                   Panel Installation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services" className="hover:text-blue-400 transition-colors font-medium">
+                <Link to="/services" className="hover:text-blue-400 transition-colors font-medium">
                   View All Services
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

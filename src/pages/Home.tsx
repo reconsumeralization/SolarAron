@@ -98,8 +98,8 @@ const Home: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="relative rounded-lg overflow-hidden shadow-lg group">
                 <img
-                  src="/pool-solar-cleaning-comparison-1.webp"
-                  alt="Initial inspection of dirty pool solar panels"
+                  src="/dirty-solar-panels.jpg"
+                  alt="Initial inspection of dirty solar panels"
                   className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 dark:bg-black/70 backdrop-blur-sm p-4">
@@ -109,8 +109,8 @@ const Home: React.FC = () => {
               </div>
               <div className="relative rounded-lg overflow-hidden shadow-lg group">
                 <img
-                  src="/pool-solar-cleaning-comparison-2.webp"
-                  alt="Professional cleaning of pool solar system"
+                  src="/aaron-cleaning-solar-panels.jpg"
+                  alt="Professional cleaning of solar panels"
                   className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 dark:bg-black/70 backdrop-blur-sm p-4">
@@ -120,8 +120,8 @@ const Home: React.FC = () => {
               </div>
               <div className="relative rounded-lg overflow-hidden shadow-lg group">
                 <img
-                  src="/pool-solar-cleaning-comparison-3.webp"
-                  alt="Final results of pool solar cleaning"
+                  src="/clean-solar-panels.jpeg"
+                  alt="Clean and efficient solar panels"
                   className="w-full h-[300px] object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 dark:bg-black/70 backdrop-blur-sm p-4">
