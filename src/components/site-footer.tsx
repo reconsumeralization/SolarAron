@@ -5,7 +5,7 @@ import {
   MapPin,
   Phone,
 } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 export function SiteFooter(): React.ReactElement {
   return (
@@ -39,38 +39,38 @@ export function SiteFooter(): React.ReactElement {
             <h3 className="text-lg font-bold text-white">Services</h3>
             <ul className="space-y-2 text-blue-100">
               <li>
-                <Link href="/services/solar-panel-cleaning" className="hover:text-blue-300">Solar Panel Cleaning</Link>
+                <Link to="/services/solar-panel-cleaning" className="hover:text-blue-300">Solar Panel Cleaning</Link>
               </li>
               <li>
-                <Link href="/services/pool-solar-maintenance" className="hover:text-blue-300">Pool Solar Maintenance</Link>
+                <Link to="/services/pool-solar-maintenance" className="hover:text-blue-300">Pool Solar Maintenance</Link>
               </li>
               <li>
-                <Link href="/services/pv-solar-repair" className="hover:text-blue-300">PV Solar Repair</Link>
+                <Link to="/services/pv-solar-repair" className="hover:text-blue-300">PV Solar Repair</Link>
               </li>
               <li>
-                <Link href="/services/system-inspections" className="hover:text-blue-300">System Inspections</Link>
+                <Link to="/services/system-inspections" className="hover:text-blue-300">System Inspections</Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-white">Quick Links</h3>
-            <ul className="space-y-2 text-blue-100">
-              <li>
-                <Link href="/" className="hover:text-blue-300">Home</Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-blue-300">About</Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-blue-300">Services</Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-blue-300">Blog</Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-blue-300">Contact</Link>
-              </li>
-            </ul>
+                          <ul className="space-y-2 text-blue-100">
+                <li>
+                  <Link to="/" className="hover:text-blue-300">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about" className="hover:text-blue-300">About</Link>
+                </li>
+                <li>
+                  <Link to="/services" className="hover:text-blue-300">Services</Link>
+                </li>
+                <li>
+                  <Link to="/blog" className="hover:text-blue-300">Blog</Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="hover:text-blue-300">Contact</Link>
+                </li>
+              </ul>
           </div>
         </div>
         <div className="mt-8 border-t border-blue-800 pt-8 text-center">
