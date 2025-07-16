@@ -12,3 +12,8 @@ export { default as TestComponents } from './test-components';
 export { default as ThankYou } from './ThankYou';
 export { default as TransferPromo } from './TransferPromo';
 export { default as CityPage } from './CityPage';
+
+// New Form Pages
+export { default as PackageSelection } from './PackageSelection';
+export { default as QuoteRequest } from './QuoteRequest';
+export { FormSuccess } from './FormSuccess';

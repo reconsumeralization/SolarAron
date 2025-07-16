@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 
 import { AnimatedHero } from '@/components';
+import ContactForm from '@/components/ContactForm';
 
 export default function Contact() {
   return (
@@ -90,70 +91,7 @@ export default function Contact() {
                   Let us help you maintain your solar investment
                 </p>
               </div>
-              <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" className="space-y-6">
-                <input type="hidden" name="form-name" value="contact" />
-                <div hidden>
-                  <input name="bot-field" />
-                </div>
-                <div className="space-y-6">
-                  <div>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="Name"
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-muted dark:bg-gray-800 border border-input focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="Email"
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-muted dark:bg-gray-800 border border-input focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      placeholder="Phone"
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-muted dark:bg-gray-800 border border-input focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      id="address"
-                      name="address"
-                      placeholder="Address"
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-muted dark:bg-gray-800 border border-input focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <textarea
-                      id="message"
-                      name="message"
-                      placeholder="Message"
-                      rows={4}
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-muted dark:bg-gray-800 border border-input focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-primary text-primary-foreground py-3 px-6 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              <ContactForm />
             </motion.div>
 
             {/* Work Preview */}
