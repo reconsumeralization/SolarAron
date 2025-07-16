@@ -29,3 +29,7 @@ export * from './PackageCard';
 export { default as PricingSection } from './pricing';
 export * from './promo-banner';
 export { OurExpertise } from './our-expertise';
+
+// Form Components
+export { PackageSelectionForm } from './forms/PackageSelectionForm';
+export { QuoteRequestForm } from './forms/QuoteRequestForm';
